@@ -119,8 +119,17 @@ class ObjectData extends React.Component {
 
   render() {
     const { dataList } = this.state;
+    const selectRow = {
+      mode: 'radio' //radio or checkbox
+    };
     return (
-      <BootstrapTable data={dataList} pagination >
+      <BootstrapTable 
+        data={dataList} 
+        selectRow={ selectRow }
+        deleteRow 
+        pagination  
+        tableStyle={ { background: '#e5e5e5' } }
+        >
         <TableHeaderColumn isKey dataField='id'>Product ID</TableHeaderColumn>
         <TableHeaderColumn dataField='productName'>Product Name</TableHeaderColumn>
         <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
